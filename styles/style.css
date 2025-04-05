@@ -1,31 +1,48 @@
-/* Global */
-body {
+/* Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #000;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
   color: #eee;
 }
 
-/* Header */
+/* Glassmorphism Base */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+}
+
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #111;
   padding: 1rem 2rem;
-  flex-wrap: wrap;
+  margin: 1rem;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
+/* Logo */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
+/* Nav links */
 .nav-links {
   display: flex;
   gap: 1.5rem;
@@ -34,18 +51,20 @@ body {
 .nav-links a {
   color: #eee;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #ff4081;
+  color: #ff66b2;
+  text-shadow: 0 0 8px #ff66b2;
 }
 
-/* Hamburger Menu */
+/* Hamburger */
 .menu-toggle {
   display: none;
-  font-size: 1.8rem;
-  color: #eee;
+  font-size: 2rem;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -55,8 +74,7 @@ body {
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: #111;
-    padding: 1rem 0;
+    margin-top: 1rem;
   }
 
   .nav-links.active {
@@ -67,3 +85,4 @@ body {
     display: block;
   }
 }
+
